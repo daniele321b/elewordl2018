@@ -6,5 +6,5 @@ La finalità del progetto è proprio quella di riuscire a creare un sito web cap
 traguardi commerciali e di ottenere visibilità sulla rete, ricca di concorrenze.
 ## Partecipanti
 
-* **Cioffi Daniele** - 
+* **Cioffi Daniele** - *d.cioffi7@studenti.unisa.it*
 * **Consalvo Mario** - *m.consalvo7@studenti.unisa.it*
