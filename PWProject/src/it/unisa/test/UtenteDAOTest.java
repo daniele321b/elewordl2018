@@ -107,5 +107,5 @@ public class UtenteDAOTest {
 	final String via = "Test";
 	final String cap = "81010";
 	final int civico = 1;
-	final String numerCarta = "1234567891234567";
+	final String numerCarta = "1234123412341234";
 }
