@@ -72,7 +72,7 @@ function mouseOut() {
 		  	<div class ="user" >
 		  			<span>
 		  				<%if(utente.getNome()!=null){ %>
-		  				<a href="accountInfo.jsp"><h3 onmouseover="setTimeout(mouseOver, 500);" onmouseout="setTimeout(mouseOut, 500);"><%= utente.getNome()%></h3></a>
+		  				<a href="accountInfo.jsp"><h3 onmouseover="setTimeout(mouseOver, 500);" onmouseout="setTimeout(mouseOut, 500);" id="userName"><%= utente.getNome()%></h3></a>
 		  				<%} %>
 		  			</span>
 		  	</div>

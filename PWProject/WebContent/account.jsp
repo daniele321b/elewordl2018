@@ -150,6 +150,7 @@ function addError(text) {
   var node = document.createElement("P");
   node.appendChild(document.createTextNode(text));
   node.style.color = "#ff0000";
+  node.classList.add("errore");
   err.appendChild(node);
   err.scrollIntoView()
 }
@@ -164,7 +165,7 @@ function addError(text) {
 					
 				   	<span id="error" class=" container">
 						<%if(request.getParameter("errore")!=null){ %>
-						<p style="color: #ff0000"><%=request.getParameter("errore") %></p>
+						<p style="color: #ff0000" class="errore"><%=request.getParameter("errore") %></p>
 						<%} %>
 					</span>
 	       <div class="account-bottom">
@@ -211,11 +212,11 @@ function addError(text) {
 						</div>
 						<div class="address">
 							<span>Email di registrazione</span>
-							<input type="text" name="email">
+							<input type="text" name="email" id="loginMail">
 						</div>
 						<div class="address">
 							<span>Password</span>
-							<input type="password" name="password">
+							<input type="password" name="password" id="loginPassword">
 						</div>
 						<div class="address">
 							<a class="forgot" href="passwordlost.jsp">Hai dimenticato la  Password?</a>

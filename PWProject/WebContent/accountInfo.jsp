@@ -22,6 +22,9 @@
 <body>
 <%@ include file="header.jsp"%>
 
+<div class="account-top heading">
+	
+</div>
 <!--account-->
    <div class="account">
 	  <div class="container">
@@ -32,7 +35,7 @@
 					</div>
 					<div class= "address">
 						<span>E-Mail</span>
-						<h3><%=utente.getMail() %></h3>
+						<h3><%=utente.getMail() %></h3> <a style="color: #ff0000" class="h4" href="LogoutS">ESCI</a>
 					</div>
 					<div class= "address">
 						<span>Nome</span>
