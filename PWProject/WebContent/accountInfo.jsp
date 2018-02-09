@@ -31,7 +31,7 @@
 	       <div class="account-bottom">
 				<div class="col-md-6 account-left">
 					<div class="account-top heading">
-						<h3>Le tue infromazioni</h3>
+						<h3>Le tue infromazioni  <a href=""><img src="img/edit.png" alt="edit profile"></a> </h3>
 					</div>
 					<div class= "address">
 						<span>E-Mail</span>

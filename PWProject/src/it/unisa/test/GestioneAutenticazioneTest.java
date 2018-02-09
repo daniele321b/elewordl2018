@@ -11,6 +11,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import net.bytebuddy.utility.RandomString;
+
 public class GestioneAutenticazioneTest {
 	
 	private String baseURL;
@@ -21,10 +23,7 @@ public class GestioneAutenticazioneTest {
 	private static final String LOGIN_RESPONSE_PAGE = "Login";
 	private static final String PASS_LOST_PAGE = "passwordlost.jsp";
 	private static final String NEW_PASS_RESPONSE_PAGE = "PswLost";
-	
-	
-	//Ripartire da qui (testing fail registrazione)--->
-//	private static final String 
+	private static final String REGISTER_RESPONSE_PAGE = "Register";
 	
 
 	@Before
@@ -85,8 +84,6 @@ public class GestioneAutenticazioneTest {
 		driver.findElement(By.name("repassword")).sendKeys("admin");
 		driver.findElement(By.name("reg-submit")).submit();
 		
-
-		LOGGER.info("#SUCCESS#"+driver.getCurrentUrl());
 		assertTrue(driver.getCurrentUrl().contains(baseURL+NEW_PASS_RESPONSE_PAGE));
 	}
 	
@@ -101,7 +98,23 @@ public class GestioneAutenticazioneTest {
 		driver.findElement(By.name("reg-submit")).submit();
 		
 		
-		LOGGER.info("#FAIL#"+driver.getCurrentUrl());
-		assertTrue(driver.getCurrentUrl().contains(baseURL+PASS_LOST_PAGE));
+		LOGGER.info("#FAIL# "+driver.getCurrentUrl());
+		assertTrue(driver.getCurrentUrl().contains(baseURL+ACCOUNT_PAGE));
+	}
+	
+	@Test
+	public void RegistratiSuccessTest() {
+		driver.findElement(By.name("nome")).sendKeys("TestAuth");
+		driver.findElement(By.name("cognome")).sendKeys("TestAuth");
+		driver.findElement(By.name("email")).sendKeys("testauth@test.it");
+		driver.findElement(By.name("password")).sendKeys("test");
+		driver.findElement(By.name("repassword")).sendKeys("test");
+		driver.findElement(By.name("carta")).sendKeys("777777777777777");
+		driver.findElement(By.name("reg-submit")).submit();
+		
+		LOGGER.info("#SUCCESS# "+driver.getCurrentUrl());
+		assertTrue(driver.getCurrentUrl().contains(baseURL+REGISTER_RESPONSE_PAGE));
+		
+		
 	}
 }

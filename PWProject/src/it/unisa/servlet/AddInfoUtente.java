@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
 
 import it.unisa.data.CartaDiCreditoBean;
 import it.unisa.data.CartaDiCreditoDAO;
@@ -47,7 +48,13 @@ public class AddInfoUtente extends HttpServlet {
 		//creare carta di credito se non esiste 
 		
 		
-		String mail = request.getParameter("mail");
+		String mail;
+		mail = request.getParameter("mail");
+		if (mail == null) {
+			UtenteBean u = (UtenteBean) request.getSession().getAttribute("utente");
+			mail = u.getMail();
+			System.out.println("Email "+mail);
+		}
 		
 		UtenteBean uSession = null;
 		UtenteDAOInterface utenteDAO = new UtenteDAO();
