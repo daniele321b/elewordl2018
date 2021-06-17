@@ -33,7 +33,7 @@ public class DriverManagerConnectionPool {
 //		String db = "mydbFinal";
 		String db = "myfinaldb";
 		String username = "root";
-		String password = "Tommaso1";
+		String password = "root";
 
 		try {
 			newConnection = DriverManager.getConnection("jdbc:mysql://"+ ip+":"+ port+"/"+db+"?autoReconnect=true&useSSL=false", username, password);
